@@ -1,0 +1,65 @@
+.page-wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--dark); }
+
+.stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 28px; }
+.stat-card { text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--green); }
+.stat-lbl { font-size: 13px; color: var(--gray); margin-top: 4px; }
+
+.sell-form { margin-bottom: 32px; }
+.sell-form h2 { margin-bottom: 20px; }
+
+.img-upload-area {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 2px dashed var(--border); border-radius: 16px; padding: 36px 20px;
+  cursor: pointer; transition: all 0.2s; overflow: hidden; text-align: center;
+  min-height: 160px;
+}
+.img-upload-area:hover { border-color: var(--green-light); background: var(--green-pale); }
+.upload-icon { font-size: 40px; margin-bottom: 10px; }
+.img-upload-area p { color: var(--gray); font-size: 14px; }
+.upload-preview { width: 100%; max-height: 220px; object-fit: cover; border-radius: 12px; }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 20px; margin-top: 0; }
+.product-card { overflow: hidden; cursor: default; transition: transform 0.2s; }
+.product-card:hover { transform: translateY(-4px); }
+.product-img-wrap {
+  width: 100%; height: 170px; background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.product-emoji { font-size: 60px; }
+.product-body { padding: 14px; }
+.product-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+.product-meta { font-size: 12px; color: var(--gray); margin-bottom: 6px; }
+.product-price { color: var(--green); font-weight: 700; font-size: 18px; }
+.product-price span { color: var(--gray); font-weight: 400; font-size: 14px; }
+
+.bookings-list { display: flex; flex-direction: column; gap: 16px; }
+.booking-card {
+  display: flex; align-items: flex-start; gap: 16px;
+  border-left: 4px solid var(--green-light);
+}
+.booking-card.pending { border-left-color: var(--amber); }
+.booking-card.rejected { border-left-color: #dc2626; }
+.booking-thumb {
+  width: 64px; height: 64px; border-radius: 12px; flex-shrink: 0;
+  background: var(--green-pale); display: flex; align-items: center; justify-content: center;
+  font-size: 28px; overflow: hidden;
+}
+.booking-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.booking-info { flex: 1; }
+.booking-info h4 { font-weight: 700; margin-bottom: 4px; }
+.booking-info p { font-size: 13px; color: var(--gray); margin-bottom: 2px; }
+.booking-actions { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; }
+
+.summary-chip {
+  display: inline-block; padding: 6px 16px;
+  border-radius: 50px; font-size: 13px; font-weight: 600;
+}
+
+@media(max-width:600px) {
+  .stats-row { grid-template-columns: repeat(2,1fr); }
+  .booking-card { flex-direction: column; }
+  .booking-actions { align-items: flex-start; }
+}

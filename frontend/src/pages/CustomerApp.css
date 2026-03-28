@@ -1,0 +1,209 @@
+.page-wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--dark); }
+
+.search-bar {
+  background: #fff;
+  border-radius: 50px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+.search-bar input {
+  flex: 1; border: none;
+  font-size: 16px; font-family: 'DM Sans', sans-serif;
+  background: transparent;
+}
+.search-bar input:focus { outline: none; }
+.clear-btn {
+  background: none; border: none;
+  color: var(--gray); cursor: pointer; font-size: 16px;
+}
+
+.filter-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.filter-chip {
+  padding: 7px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--gray);
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.filter-chip.active { background: var(--green); color: #fff; border-color: var(--green); }
+.filter-chip:hover:not(.active) { background: var(--green-pale); color: var(--green); }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 20px; }
+.product-card { overflow: hidden; transition: transform 0.2s; }
+.product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.product-img-wrap {
+  width: 100%; height: 170px;
+  background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.product-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.product-emoji { font-size: 60px; }
+.product-body { padding: 14px; }
+.product-name { font-weight: 700; font-size: 16px; }
+.product-farmer { font-size: 13px; color: var(--gray); margin: 4px 0; }
+.product-desc { font-size: 13px; color: var(--gray); margin-bottom: 6px; line-height: 1.4;
+  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.product-price { color: var(--green); font-weight: 700; font-size: 18px; margin-top: 6px; }
+.product-price span { color: var(--gray); font-weight: 400; font-size: 13px; }
+.product-qty { font-size: 12px; color: #16a34a; margin-top: 4px; }
+
+.bookings-list { display: flex; flex-direction: column; gap: 16px; }
+.booking-card {
+  display: flex; align-items: center; gap: 16px;
+  border-left: 4px solid var(--green-light);
+}
+.booking-card.pending  { border-left-color: var(--amber); }
+.booking-card.rejected { border-left-color: #dc2626; }
+.booking-thumb {
+  width: 64px; height: 64px; border-radius: 12px; flex-shrink: 0;
+  background: var(--green-pale); display: flex; align-items: center;
+  justify-content: center; font-size: 28px; overflow: hidden;
+}
+.booking-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.booking-info { flex: 1; }
+.booking-info h4 { font-weight: 700; margin-bottom: 4px; }
+.booking-info p { font-size: 13px; color: var(--gray); margin-bottom: 2px; }
+
+.phone-input {
+  flex: 1; padding: 12px 16px; border: 1.5px solid var(--border);
+  border-radius: 12px; font-size: 15px; font-family: 'DM Sans', sans-serif;
+}
+.phone-input:focus { outline: none; border-color: var(--green-light); }
+
+.modal-product {
+  display: flex; gap: 14px; align-items: center;
+  background: var(--green-pale); border-radius: 14px; padding: 14px; margin-bottom: 20px;
+}
+.modal-thumb {
+  width: 66px; height: 66px; border-radius: 12px; flex-shrink: 0;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  font-size: 32px; overflow: hidden;
+}
+.modal-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+@media(max-width:600px) {
+  .booking-card { flex-wrap: wrap; }
+}
+
+/* ── Nearby City Filter ── */
+.nearby-section { margin-bottom: 20px; }
+
+.nearby-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.nearby-toggle.open,
+.nearby-toggle:hover {
+  border-color: var(--green-light);
+  background: var(--green-pale);
+  color: var(--green);
+}
+.nearby-arrow { margin-left: auto; font-size: 11px; }
+
+.nearby-panel {
+  margin-top: 10px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  animation: fadeInDown 0.2s ease;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nearby-search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.nearby-input {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.2s;
+}
+.nearby-input:focus { outline: none; border-color: var(--green-light); }
+
+.city-chips-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.city-chips-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.city-chip {
+  padding: 7px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--gray);
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.city-chip.active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.city-chip:hover:not(.active) {
+  background: var(--green-pale);
+  color: var(--green);
+  border-color: var(--green-light);
+}
+
+.product-city {
+  font-size: 11px;
+  color: var(--gray);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.product-qty.stock-out  { color: #dc2626; font-weight: 600; }
+.product-qty.stock-low  { color: #d97706; font-weight: 600; }
+.product-qty.stock-ok   { color: #16a34a; }
+
+.out-of-stock-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.45);
+  color: #fff; font-weight: 700; font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: inherit;
+}
+.product-img-wrap { position: relative; }
